@@ -26,7 +26,7 @@ If you need to set Windows Explorer back as the shell temporarily (ie: install W
 
 ```powershell
 while ($true) {
-  $steam = get-process -name Steam
+  $steam = get-process -name Steam -erroraction silentlycontinue
 
   if ($null -eq $steam) {
     start-process C:\Windows\explorer.exe  
